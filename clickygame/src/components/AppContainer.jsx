@@ -6,11 +6,12 @@ import Footer from './Footer';
 import ImageGrid from './ImageGrid';
 const AppContainer = () => {
     return (
-        <Container>
+        <div className='container'>
             <Header />
-            <ImageGrid/>
+            <ImageGrid />
             <Footer />
-        </Container>
+        </div>
+
     )
 }
 

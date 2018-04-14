@@ -1,8 +1,15 @@
 import React from 'react';
 
+const styles = {
+    footer: {
+        background: 'red',
+        textAlign: 'center'
+    }
+}
+
 const Footer = props => {
     return (
-        <div className="footer">{props.children}</div>
+        <div style={styles.footer} className="footer">Footer</div>
     )
 }
 
