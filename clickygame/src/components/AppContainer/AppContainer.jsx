@@ -1,27 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Card from '../Card/Card';
 import cardImages from './cardImages.json'
 import './AppContainer.css';
 
-
-
-class AppContainer extends React.Component {
+class AppContainer extends Component {
     state = {
-        beenClicked: false
+        cardImages
     }
-    clickCard = event => {
-        console.log('clicked')
-        this.setState({beenClicked:true})
-    };
+    clickCard = id => {
+        console.log(id)
+    }
+
     render() {
         return (
             <div className='container'>
                 <Header />
                 <div className='row background'>
                     <div id='grid' className='col-md-12 grid'>
-                        {cardImages.map(data => (
+                        {this.state.cardImages.map(data => (
                             <Card clickCard={this.clickCard} key={data.id} id={data.id} path={data.path} />
                         ))}
                     </div>
