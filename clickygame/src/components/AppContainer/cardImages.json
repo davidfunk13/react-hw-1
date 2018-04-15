@@ -1,30 +1,62 @@
 [
     {
-        "id": 1,
-        "path": "../images/gridimage.jpeg"
+        "id": "Soldier: 76",
+        "name": "Soldier: 76",
+        "beenClicked": false,
+        "path": "/images/cards/soldier76.jpg"
     },
     {
-        "id":2,
-        "path": "../../images/gridimage.jpeg"
+        "id": "Jeff",
+        "name": "Big Daddy Jeff",
+        "beenClicked": false,
+        "path": "/images/cards/jeff.jpg"
     },
     {
-        "id":3,
-        "path": "../../images/gridimage.jpeg"
+        "id": "Ana",
+        "name": "Captain Ana Amari",
+        "beenClicked": false,
+        "path": "/images/cards/ana.jpg"
     },
     {
-        "id":4,
-        "path": "../../images/gridimage.jpeg"
+        "id": "Hanzo",
+        "name": "Hanzo",
+        "beenClicked": false,
+        "path": "/images/cards/hanzo.jpg"
     },
     {
-        "id":5,
-        "path": "../../images/gridimage.jpeg"
+        "id": "Junkrat",
+        "name": "Junkrat",
+        "beenClicked": false,
+        "path": "/images/cards/junkrat.jpg"
     },
     {
-        "id":6,
-        "path": "../../images/gridimage.jpeg"
+        "id": "Lúcio",
+        "name": "Lúcio",
+        "beenClicked": false,
+        "path": "/images/cards/lucio.jpg"
     },
     {
-        "id":7,
-        "path": "../../images/gridimage.jpeg"
+        "id": "McCree",
+        "name": "McCree",
+        "beenClicked": false,
+        "path": "/images/cards/mccree.jpg"
+    },
+    {
+        "id": "Reinhardt",
+        "name": "Reinhardt",
+        "beenClicked": false,
+        "path": "/images/cards/reinhardt.jpg"
+    },
+    {
+        "id": "Widowmaker",
+        "name": "Widowmaker",
+        "beenClicked": false,
+        "path": "/images/cards/widowmaker.jpg"
+    },
+    {
+        "id": "Zenyatta",
+        "name": "Zenyatta",
+        "beenClicked": false,
+        "path": "/images/cards/zenyatta.jpg"
     }
 ]

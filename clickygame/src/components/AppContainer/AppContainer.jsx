@@ -7,7 +7,9 @@ const AppContainer = () => {
     return (
         <div className='container'>
             <Header />
-            <Card name={cardImages.name} />
+            {cardImages.map( data => (
+                    <Card id={data.id} path={data.path} />
+                ))}
             <Footer />
         </div>
 

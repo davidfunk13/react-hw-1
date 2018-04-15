@@ -1,5 +1,6 @@
 import React from 'react';
 import { width } from 'window-size';
+import './Header.css'
 
 const styles = {
     header: {
@@ -13,7 +14,7 @@ const styles = {
 const Header = props => {
     return (
         <div style={styles.header} className='header'>
-            <h1>Hello React Hw</h1>
+            <img className='img-fluid' src="/images/banner.jpg" alt="Overwatch Clicky Game!"/>
         </div>
     )
 }
