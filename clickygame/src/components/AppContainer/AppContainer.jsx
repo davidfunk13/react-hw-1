@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './Header'
-import Footer from './Footer';
-import ImageGrid from './ImageGrid';
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import Card from '../Card/Card';
+import cardImages from './cardImages.json'
 const AppContainer = () => {
     return (
         <div className='container'>
             <Header />
-            <ImageGrid />
+            <Card name={cardImages.name} />
             <Footer />
         </div>
 
