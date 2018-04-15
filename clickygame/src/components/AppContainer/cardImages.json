@@ -1,62 +1,62 @@
 [
     {
-        "id": "Soldier: 76",
+        "id":"img-soldier76",
         "name": "Soldier: 76",
         "beenClicked": false,
-        "path": "/images/cards/soldier76.jpg"
+        "path": "/images/cards/soldier76.png"
     },
     {
-        "id": "Jeff",
+        "id":"img-bigdaddyjeff",
         "name": "Big Daddy Jeff",
         "beenClicked": false,
-        "path": "/images/cards/jeff.jpg"
+        "path": "/images/cards/jeff.png"
     },
     {
-        "id": "Ana",
+        "id":"img-ana",
         "name": "Captain Ana Amari",
         "beenClicked": false,
-        "path": "/images/cards/ana.jpg"
+        "path": "/images/cards/ana.png"
     },
     {
-        "id": "Hanzo",
+        "id":"img-hanzo",
         "name": "Hanzo",
         "beenClicked": false,
-        "path": "/images/cards/hanzo.jpg"
+        "path": "/images/cards/hanzo.png"
     },
     {
-        "id": "Junkrat",
+        "id":"img-junk",
         "name": "Junkrat",
         "beenClicked": false,
-        "path": "/images/cards/junkrat.jpg"
+        "path": "/images/cards/junkrat.png"
     },
     {
-        "id": "Lúcio",
+        "id":"img-lucio",
         "name": "Lúcio",
         "beenClicked": false,
-        "path": "/images/cards/lucio.jpg"
+        "path": "/images/cards/lucio.png"
     },
     {
-        "id": "McCree",
+        "id":"img-mcree",
         "name": "McCree",
         "beenClicked": false,
-        "path": "/images/cards/mccree.jpg"
+        "path": "/images/cards/mccree.png"
     },
     {
-        "id": "Reinhardt",
+        "id":"img-rein",
         "name": "Reinhardt",
         "beenClicked": false,
-        "path": "/images/cards/reinhardt.jpg"
+        "path": "/images/cards/reinhardt.png"
     },
     {
-        "id": "Widowmaker",
+        "id":"img-widow",
         "name": "Widowmaker",
         "beenClicked": false,
-        "path": "/images/cards/widowmaker.jpg"
+        "path": "/images/cards/widowmaker.png"
     },
     {
-        "id": "Zenyatta",
+        "id": "img-zen",
         "name": "Zenyatta",
         "beenClicked": false,
-        "path": "/images/cards/zenyatta.jpg"
+        "path": "/images/cards/zenyatta.png"
     }
 ]

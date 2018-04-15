@@ -2,18 +2,18 @@ import React from 'react';
 import { width } from 'window-size';
 import './Header.css'
 
-const styles = {
-    header: {
-        background: 'red',
-        width: 'auto',
-        height: '100%',
-        textAlign: 'center',
-    }
-}
+// const styles = {
+//     header: {
+//         background: 'red',
+//         width: 'auto',
+//         height: '100%',
+//         textAlign: 'center',
+//     }
+// }
 
 const Header = props => {
     return (
-        <div style={styles.header} className='header'>
+        <div className='header'>
             <img className='img-fluid' src="/images/banner.jpg" alt="Overwatch Clicky Game!"/>
         </div>
     )
