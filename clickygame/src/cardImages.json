@@ -6,6 +6,18 @@
         "path": "/images/cards/soldier76.png"
     },
     {
+        "id":"img-winston",
+        "name": "Winston",
+        "beenClicked": false,
+        "path": "/images/cards/winston.png"
+    },
+    {
+        "id":"img-tracer",
+        "name": "Tracer",
+        "beenClicked": false,
+        "path": "/images/cards/tracer.png"
+    },
+    {
         "id":"img-bigdaddyjeff",
         "name": "Big Daddy Jeff",
         "beenClicked": false,
