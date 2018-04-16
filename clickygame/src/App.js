@@ -7,32 +7,44 @@ import './App.css';
 
 class App extends Component {
   state = {
-    cardImages
+    score: 0,
+    highestScore: 0,
+    cardImages: cardImages,
   }
-  
-  shuffleCards = (cards) => {
-    const array = this.state.cardImages
+
+  clickedTwice = id => {
+    console.log(id)
+    this.state.cardImages.forEach(element => {
+      if (element.id === id){
+        console.log(element.beenClicked)
+      }
+    });
+
+  }
+
+  randomizeCards = id => {
+
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-    
+
       // While there remain elements to shuffle...
       while (0 !== currentIndex) {
-    
+
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-    
+
         // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
       }
-    
+
       return array;
     }
-    shuffle(array)
-    this.setState({cardImages})
-    console.log(cards.id)
+    shuffle(this.state.cardImages)
+
+    this.setState({ cardImages })
   }
 
   render() {
@@ -42,7 +54,7 @@ class App extends Component {
         <div className='row background'>
           <div id='grid' className='col-md-12 grid'>
             {this.state.cardImages.map(data => (
-              <Card shuffleCards={this.shuffleCards} key={data.id} id={data.id} path={data.path} />
+              <Card clickedTwice={this.clickedTwice} boolean={this.state.beenClicked} key={data.id} id={data.id} path={data.path} />
             ))}
           </div>
         </div>

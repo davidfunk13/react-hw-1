@@ -6,7 +6,9 @@ const Card = props => {
 
     {
         return (
-            <img onClick={() => props.shuffleCards(props)} id={props.id} src={props.path} alt={props.name} />
+            // <div id={props.id} className='image-container'>
+                <img onClick={() => props.clickedTwice(props.id)} id={props.id} src={props.path} alt={props.name} />
+            // </div>
         )
     }
 
