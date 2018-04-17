@@ -4,8 +4,6 @@ import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card';
 import cardImages from './cardImages.json'
 import './App.css';
-import Nav from './components/Nav/Nav';
-// import ResetButton from './components/ResetButton/ResetButton'
 
 class App extends Component {
   state = {
@@ -15,11 +13,8 @@ class App extends Component {
   }
 
   clickedTwice = id => {
-    console.log(id)
     this.state.cardImages.forEach(element => {
-      console.log('not hit')
       if (element.id === id) {
-        console.log('hit')
         if (element.beenClicked) {
           alert('you lose');
           this.resetGame()
@@ -40,12 +35,9 @@ class App extends Component {
   randomizeCards = array => {
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-      // While there remain elements to shuffle...
       while (0 !== currentIndex) {
-        // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-        // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
@@ -55,9 +47,8 @@ class App extends Component {
     shuffle(this.state.cardImages)
     this.setState({ cardImages })
   }
-  
+
   resetGame = cardImages => {
-    console.log('reset')
     this.state.cardImages.forEach(element => {
       element.beenClicked = false;
     })
@@ -66,7 +57,6 @@ class App extends Component {
     })
   }
   resetGameandHighScore = cardImages => {
-    console.log('reset')
     this.state.cardImages.forEach(element => {
       element.beenClicked = false;
     })
@@ -75,7 +65,7 @@ class App extends Component {
       highScore: 0
     })
   }
-  
+
   scoreBoard = () => {
     this.setState(newState => ({ score: newState.score + 1 }))
   }
@@ -89,10 +79,17 @@ class App extends Component {
       <div className='container'>
         <Header />
         {/* <Nav/> */}
-        <div className='nav'>
-          <div className='scoreboard'>Score: {this.state.score} High Score: {this.state.highScore}</div>
-          <button onClick={() => this.resetGameandHighScore()} id='reset' className='reset'>Reset High Score and Game!</button>
-          <button onClick={() => this.resetGame()} id='reset' className='reset'>Reset Game!</button>
+        <div className='row nav'>
+          <div className='col-md-12 scoreboard'>
+            <p className='score'>
+              Score: {this.state.score}
+              <button onClick={() => this.resetGame()} id='reset' className='reset'>Reset Game!</button>
+            </p>
+            <p className='highscore'>
+              High Score: {this.state.highScore}
+              <button onClick={() => this.resetGameandHighScore()} id='reset' className='reset2'>Reset High Score and Game!</button>
+            </p>
+          </div>
         </div>
         <div className='row background' >
           <div id='grid' className='col-md-12 grid'>

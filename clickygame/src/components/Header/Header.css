@@ -1,11 +1,7 @@
 .img-fluid {
     width: 100%;
-    height: auto;
+    height: auto        
 }
 .header {
-    background: #218ffe;        
-}
-.reset {
-    border: 1px solid black;
-    background-color: white;
+    background: #218ffe;
 }

@@ -6,7 +6,6 @@ const Nav = props => {
             <div className='nav'>
                 <div className='scoreboard'>Score: {props.score} High Score: {props.highScore}</div>
                 <button onClick={() => this.resetGame()} id='reset' className='reset'>Reset High Score and Game!</button>
-
             </div>
         )
 }

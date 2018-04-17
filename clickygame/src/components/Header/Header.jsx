@@ -1,5 +1,4 @@
 import React from 'react';
-import { width } from 'window-size';
 import './Header.css'
 
 const Header = props => {
