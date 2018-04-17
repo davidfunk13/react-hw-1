@@ -63,7 +63,7 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <Header />
+        <Header score={this.state.score} />
         <div className='row background'>
           <div id='grid' className='col-md-12 grid'>
             {this.state.cardImages.map(data => (
@@ -73,7 +73,6 @@ class App extends Component {
         </div>
         <Footer />
       </div>
-
     )
   }
 

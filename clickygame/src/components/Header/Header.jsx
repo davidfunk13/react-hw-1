@@ -14,7 +14,9 @@ import './Header.css'
 const Header = props => {
     return (
         <div className='header'>
-            <img className='img-fluid' src="/images/banner.jpg" alt="Overwatch Clicky Game!"/>
+            <img id='banner' className='img-fluid' src="/images/banner.jpg" alt="Overwatch Clicky Game!"/>
+            <div id='scoreboard' className='scoreboard'>Score: {props.score} || High Score</div>
+            <button id='reset' className='reset'>Reset Game</button>
         </div>
     )
 }
