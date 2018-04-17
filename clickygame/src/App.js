@@ -27,8 +27,8 @@ class App extends Component {
           this.scoreBoard()
           element.beenClicked = true;
         }
-        if (this.state.score >= this.state.highestScore){
-          this.state.highestScore = this.state.score +1
+        if (this.state.score >= this.state.highestScore) {
+          this.highestScore()
         }
       }
     });
@@ -38,14 +38,11 @@ class App extends Component {
   randomizeCards = array => {
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
-
       // While there remain elements to shuffle...
       while (0 !== currentIndex) {
-
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-
         // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
@@ -54,7 +51,6 @@ class App extends Component {
       return array;
     }
     shuffle(this.state.cardImages)
-
     this.setState({ cardImages })
   }
 
@@ -62,19 +58,16 @@ class App extends Component {
     console.log('reset')
     this.state.cardImages.forEach(element => {
       element.beenClicked = false;
-      console.log(element.beenClicked)
     })
+    this.setState({score:0})
   }
 
   scoreBoard = () => {
+    this.setState(newState => ({ score: newState.score + 1 }))
+  }
 
-    this.setState(newState =>
-      (
-        {
-          score: newState.score + 1
-        }
-      )
-    )
+  highestScore = () => {
+    this.setState(newState => ({ highestScore: newState.score }))
   }
 
   render() {
