@@ -15,7 +15,11 @@ class App extends Component {
   clickedTwice = id => {
     console.log(id)
     this.state.cardImages.forEach(element => {
+      console.log('not hit')
       if (element.id === id){
+        console.log('hit')
+        console.log(element.beenClicked)
+        element.beenClicked = true;
         console.log(element.beenClicked)
       }
     });
