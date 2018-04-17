@@ -18,6 +18,9 @@ class App extends Component {
       console.log('not hit')
       if (element.id === id){
         console.log('hit')
+        if (element.beenClicked) {
+          alert('you lose');
+        }
         console.log(element.beenClicked)
         element.beenClicked = true;
         console.log(element.beenClicked)
