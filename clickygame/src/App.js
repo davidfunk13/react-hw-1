@@ -16,14 +16,20 @@ class App extends Component {
     console.log(id)
     this.state.cardImages.forEach(element => {
       console.log('not hit')
-      if (element.id === id){
+      if (element.id === id) {
         console.log('hit')
         if (element.beenClicked) {
           alert('you lose');
           this.resetGame()
           return false
         }
-        element.beenClicked = true;
+        if (!element.beenClicked) {
+          this.scoreBoard()
+          element.beenClicked = true;
+        }
+        if (this.state.score >= this.state.highestScore){
+          this.state.highestScore = this.state.score +1
+        }
       }
     });
     this.randomizeCards(this.state.cardImages)
@@ -60,10 +66,21 @@ class App extends Component {
     })
   }
 
+  scoreBoard = () => {
+
+    this.setState(newState =>
+      (
+        {
+          score: newState.score + 1
+        }
+      )
+    )
+  }
+
   render() {
     return (
       <div className='container'>
-        <Header score={this.state.score} />
+        <Header score={this.state.score} highestScore={this.state.highestScore} />
         <div className='row background'>
           <div id='grid' className='col-md-12 grid'>
             {this.state.cardImages.map(data => (
