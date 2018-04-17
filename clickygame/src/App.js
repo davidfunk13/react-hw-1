@@ -4,11 +4,13 @@ import Footer from './components/Footer/Footer'
 import Card from './components/Card/Card';
 import cardImages from './cardImages.json'
 import './App.css';
+import Nav from './components/Nav/Nav';
+// import ResetButton from './components/ResetButton/ResetButton'
 
 class App extends Component {
   state = {
     score: 0,
-    highestScore: 0,
+    highScore: 0,
     cardImages: cardImages,
   }
 
@@ -27,8 +29,8 @@ class App extends Component {
           this.scoreBoard()
           element.beenClicked = true;
         }
-        if (this.state.score >= this.state.highestScore) {
-          this.highestScore()
+        if (this.state.score >= this.state.highScore) {
+          this.highScore()
         }
       }
     });
@@ -53,28 +55,46 @@ class App extends Component {
     shuffle(this.state.cardImages)
     this.setState({ cardImages })
   }
-
+  
   resetGame = cardImages => {
     console.log('reset')
     this.state.cardImages.forEach(element => {
       element.beenClicked = false;
     })
-    this.setState({score:0})
+    this.setState({
+      score: 0,
+    })
   }
-
+  resetGameandHighScore = cardImages => {
+    console.log('reset')
+    this.state.cardImages.forEach(element => {
+      element.beenClicked = false;
+    })
+    this.setState({
+      score: 0,
+      highScore: 0
+    })
+  }
+  
   scoreBoard = () => {
     this.setState(newState => ({ score: newState.score + 1 }))
   }
 
-  highestScore = () => {
-    this.setState(newState => ({ highestScore: newState.score }))
+  highScore = () => {
+    this.setState(newState => ({ highScore: newState.score }))
   }
 
   render() {
     return (
       <div className='container'>
-        <Header score={this.state.score} highestScore={this.state.highestScore} />
-        <div className='row background'>
+        <Header />
+        {/* <Nav/> */}
+        <div className='nav'>
+          <div className='scoreboard'>Score: {this.state.score} High Score: {this.state.highScore}</div>
+          <button onClick={() => this.resetGameandHighScore()} id='reset' className='reset'>Reset High Score and Game!</button>
+          <button onClick={() => this.resetGame()} id='reset' className='reset'>Reset Game!</button>
+        </div>
+        <div className='row background' >
           <div id='grid' className='col-md-12 grid'>
             {this.state.cardImages.map(data => (
               <Card randomize={() => this.randomizeCards(this.state.cardImages)} clickedTwice={this.clickedTwice} boolean={this.state.beenClicked} key={data.id} id={data.id} path={data.path} />

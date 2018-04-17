@@ -5,3 +5,7 @@
 .header {
     background: #218ffe;        
 }
+.reset {
+    border: 1px solid black;
+    background-color: white;
+}
