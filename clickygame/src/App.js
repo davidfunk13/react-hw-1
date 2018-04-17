@@ -20,17 +20,16 @@ class App extends Component {
         console.log('hit')
         if (element.beenClicked) {
           alert('you lose');
+          this.resetGame()
+          return false
         }
-        console.log(element.beenClicked)
         element.beenClicked = true;
-        console.log(element.beenClicked)
       }
     });
-
+    this.randomizeCards(this.state.cardImages)
   }
 
-  randomizeCards = id => {
-
+  randomizeCards = array => {
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -46,12 +45,19 @@ class App extends Component {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
       }
-
       return array;
     }
     shuffle(this.state.cardImages)
 
     this.setState({ cardImages })
+  }
+
+  resetGame = cardImages => {
+    console.log('reset')
+    this.state.cardImages.forEach(element => {
+      element.beenClicked = false;
+      console.log(element.beenClicked)
+    })
   }
 
   render() {
@@ -61,7 +67,7 @@ class App extends Component {
         <div className='row background'>
           <div id='grid' className='col-md-12 grid'>
             {this.state.cardImages.map(data => (
-              <Card clickedTwice={this.clickedTwice} boolean={this.state.beenClicked} key={data.id} id={data.id} path={data.path} />
+              <Card randomize={() => this.randomizeCards(this.state.cardImages)} clickedTwice={this.clickedTwice} boolean={this.state.beenClicked} key={data.id} id={data.id} path={data.path} />
             ))}
           </div>
         </div>
